@@ -21,9 +21,14 @@ jobs:
         with:
           python-version: "3.x" # Replace '3.x' with the specific version of Python you need, if necessary
 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
       - name: Run main.py
         run: python main.py
         env:
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
           EMAIL: ${{ secrets.EMAIL }}
           PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+          WEATHER_API: ${{ secrets.WEATHER_API }}

@@ -3,7 +3,7 @@
 3. The text will include
    - Weather for that time and for the next 24 hours
    - GCal Events for that day
+   - Google Task data for reminders I can set from my phone
    - News events for that day
    - Stock trackers for my favorite stocks
-   - Google Task data for reminders I can set from my phone
 

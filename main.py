@@ -1,7 +1,12 @@
 import smtplib
 import os
+from generateMessage import generateMessage
 
-CARRIERS = {"verizon": "@vtext.com"}
+# https://medium.com/testingonprod/how-to-send-text-messages-with-python-for-free-a7c92816e1a4
+CARRIERS = {
+    "tmobile": "@tmomail.net",
+    "verizon": "@vtext.com",
+}
 EMAIL = os.environ.get("EMAIL")
 APP_PASSWORD = os.environ.get("APP_PASSWORD")
 PHONE_NUMBER = os.environ.get("PHONE_NUMBER")
@@ -22,9 +27,8 @@ def send_message(
 
 def main():
 
-    message = "check kar"
     carrier = "verizon"
-    message = message
+    message = generateMessage()
 
     send_message(carrier, message)
 
