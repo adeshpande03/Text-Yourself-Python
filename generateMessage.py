@@ -9,7 +9,7 @@ def getWeather():
     url = f"https://api.weatherapi.com/v1/history.json?key={os.environ.get('WEATHER_API')}&q=Austin&dt={today.strftime('%Y-%m-%d')}"
     # print(requests.get(url).content)
     # print(url)
-    return requests.get(url.content)
+    return requests.get(url).content
 
 
 def getGCal():
