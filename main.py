@@ -28,10 +28,9 @@ def send_message(
 def main():
 
     carrier = "verizon"
-    messages = generateMessage()
-    print(messages)
-    for message in messages:
-        send_message(carrier, message)
+    message = generateMessage()
+    print(message)
+    send_message(carrier, message)
     print("Sent.")
 
     # def test():

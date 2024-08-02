@@ -3,6 +3,7 @@ import json
 from pprint import *
 import json
 from datetime import datetime, timezone
+import pytz
 
 
 def getWeather():
@@ -25,6 +26,13 @@ def isUnixToday(unix_time):
         and date_from_unix.month == today_date.month
         and date_from_unix.day == today_date.day
     )
+
+
+def get_current_time_austin():
+    central_time = pytz.timezone("America/Chicago")
+    # Get the current time in that timezone
+    current_time = datetime.now(central_time)
+    return current_time.strftime("%I:%M:%S %p")
 
 
 def getLeetCode():
@@ -132,17 +140,14 @@ def getLeetCode():
     #     return response.json()  # Returns the JSON response from the API
     # else:
     #     return {'error': 'Failed to fetch data', 'status_code': response.status_code}
-    return f"Your daily problem is {'done' if daily_done else 'not done'}, and you currently have {current_coins} LeetCoins!"
+    return f"\nAs of {get_current_time_austin()}, your daily problem is {'done' if daily_done else 'not done'}, and you currently have {current_coins} LeetCoins!"
 
 
 def generateMessage():
     weather = getWeather()
     leetcode = getLeetCode()
-    message = [
-        # weather,
-        leetcode
-    ]
-    # pprint(message)
+    message = leetcode
+    pprint(message)
     return message
 
 
