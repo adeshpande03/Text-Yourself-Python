@@ -28,11 +28,19 @@ def send_message(
 def main():
 
     carrier = "verizon"
-    message = generateMessage()
-    print(message[0])
+    messages = generateMessage()
+    print(messages)
+    for message in messages:
+        send_message(carrier, message)
+    print("Sent.")
 
-    send_message(carrier, message[:])
+    # def test():
+    #     carrier = "verizon"
+    #     message = "A" * 160
+
+    # send_message(carrier, message)
 
 
 if __name__ == "__main__":
     main()
+    # test()
