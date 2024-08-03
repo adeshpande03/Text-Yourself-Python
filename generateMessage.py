@@ -32,7 +32,7 @@ def get_current_time_austin():
     central_time = pytz.timezone("America/Chicago")
     # Get the current time in that timezone
     current_time = datetime.now(central_time)
-    return current_time.strftime("%I:%M:%S %p")
+    return current_time.strftime("%I:%M %p")
 
 
 def getLeetCode():
